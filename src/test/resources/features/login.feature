@@ -7,6 +7,18 @@ Feature: Testing the login functionality on NHS app
     When User enters username 'admin' and password 'admin'
     Then User validates the page title is 'NHS patients'
 
+  Scenario Outline: Testing login with invalid credentials
+
+    Given User navigates to NHS app site
+    When User enters username '<userName>' and password '<password>'
+    Then User validates the page title is '<pageTitle>'
+
+    Examples:
+      |userName      |password     |pageTitle|
+      |wrongUser     |admin        |LoginPage|
+      |admin         |wrongPassword|LoginPage|
+      |wrongUser     |wrongPassword|LoginPage|
+
 
 
 
