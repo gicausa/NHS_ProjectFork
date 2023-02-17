@@ -19,6 +19,22 @@ Feature: Testing the login functionality on NHS app
       |admin         |wrongPassword|LoginPage|
       |wrongUser     |wrongPassword|LoginPage|
 
+  Scenario Outline: Testing login with leaving credential input blank
+
+    Given User navigates to NHS app site
+    When User enters username '<userName>' and password '<password>'
+    Then User validates the page title is '<pageTitle>'
+
+    Examples:
+      |userName |password |pageTitle|
+      |         |admin    |LoginPage|
+      |admin    |         |LoginPage|
+      |         |         |LoginPage|
+
+
+
+
+
 
 
 
