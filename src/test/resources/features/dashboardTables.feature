@@ -6,7 +6,6 @@
       When User enters username 'admin' and password 'admin'
       Then User validates the page title is 'NHS patients'
 
-    # user story 3, US_003_T4-9 Dashboard Page Tables Header
 
     @NA-33
     Scenario: Validating the number of tables on Dashboard page
