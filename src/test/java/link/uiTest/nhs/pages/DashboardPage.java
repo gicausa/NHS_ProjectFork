@@ -33,6 +33,12 @@ public class DashboardPage {
     @FindBy(css = "#patients-in-hospital_wrapper thead th")
     List<WebElement> headerText;
 
+    @FindBy(partialLinkText = "Add patient")
+    WebElement addPatientLink;
+
+    @FindBy(xpath = "//table[@id='patients-waiting']//tr/td[2]")
+    List<WebElement> patientsWaiting;
+
 
     public Integer getNumberOfCards(){
         return cards.size();
@@ -82,17 +88,15 @@ public class DashboardPage {
         return allHeaderText;
     }
 
+    public void clickAddPatient(){
+        addPatientLink.click();
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public List<String> getAllWaitingPatients(){
+        List<String> waitingPatients = new ArrayList<>();
+        for(WebElement patient : patientsWaiting){
+            waitingPatients.add(BrowserUtils.getText(patient));
+        }
+        return waitingPatients;
+    }
 }

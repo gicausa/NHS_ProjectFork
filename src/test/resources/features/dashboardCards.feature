@@ -6,8 +6,6 @@ Feature: Testing the cards on dashboard page
     When User enters username 'admin' and password 'admin'
     Then User validates the page title is 'NHS patients'
 
-    # user story 2, US_002_T4-9 Dashboard Page
-
     @NA-28
   Scenario: Validating the number of cards on Dashboard page
     Then User validates the number of cards is 3
