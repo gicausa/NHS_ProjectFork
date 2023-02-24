@@ -34,4 +34,14 @@ public class DashboardStepDef {
         dashboardPage.validateNumbers();
     }
 
+    @Then("User validates the number of tables is {int}")
+    public void user_validates_the_number_of_tables_is(Integer nrOfTables) {
+        Assert.assertEquals(nrOfTables,dashboardPage.getNumberOfTables());
+    }
+
+    @Then("User validates the table headers")
+    public void user_validates_the_table_headers(io.cucumber.datatable.DataTable tableHeader) {
+        Assert.assertEquals(tableHeader.asList(),dashboardPage.getTextOfHeader());
+    }
+
 }
