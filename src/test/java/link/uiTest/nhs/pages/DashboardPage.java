@@ -27,6 +27,12 @@ public class DashboardPage {
     @FindBy(css = ".panel-heading div.huge")
     List<WebElement> cardNumber;
 
+    @FindBy(css = ".dataTables_scroll")
+    List<WebElement> tables;
+
+    @FindBy(css = "#patients-in-hospital_wrapper thead th")
+    List<WebElement> headerText;
+
 
     public Integer getNumberOfCards(){
         return cards.size();
@@ -60,6 +66,20 @@ public class DashboardPage {
         for(Integer number : numbers){
             Assert.assertTrue(number >= 0);
         }
+    }
+
+    public Integer getNumberOfTables(){
+        return tables.size();
+    }
+
+    public List<String> getTextOfHeader(){
+        List<String> allHeaderText = new ArrayList<>();
+
+        for(int i=0; i<4; i++){
+            Assert.assertTrue(headerText.get(i).isDisplayed());
+            allHeaderText.add(BrowserUtils.getText(headerText.get(i)));
+        }
+        return allHeaderText;
     }
 
 
