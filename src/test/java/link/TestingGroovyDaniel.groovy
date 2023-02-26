@@ -1,0 +1,4 @@
+package link
+
+class TestingGroovyDaniel {
+}
