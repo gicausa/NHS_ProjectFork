@@ -1,2 +1,4 @@
-package link.uiTest.nhs.pages;public class TestDaniel {
+package link.uiTest.nhs.pages;
+
+public class TestDaniel {
 }

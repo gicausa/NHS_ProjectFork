@@ -1,4 +1,5 @@
 package link
 
 class TestingGroovyDaniel {
+
 }
